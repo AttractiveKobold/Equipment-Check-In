@@ -27,7 +27,7 @@ namespace EquipmentCheckInApp
 
         private void btnCheckIn_Click(object sender, EventArgs e)
         {
-            Employee emp = new Employee("3");
+            
         }
 
         private void btnCheckOut_Click(object sender, EventArgs e)
