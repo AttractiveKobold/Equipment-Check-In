@@ -46,5 +46,8 @@ namespace EquipmentCheckInApp
 
             con.Close();
         }
+
+        public string[] getSkills() { return skills; }
+        public string getID() { return id; }
     }
 }

@@ -13,26 +13,34 @@ namespace EquipmentCheckInApp
 {
     public partial class frmMain : Form
     {
-        static OleDbConnection con;
-        static OleDbCommand cmd;
-        static OleDbDataReader reader;
 
         private EquipmentManager eManager;
 
         public frmMain()
         {
             InitializeComponent();
+            eManager = new EquipmentManager();
         }
 
 
         private void btnCheckIn_Click(object sender, EventArgs e)
         {
-            Employee emp = new Employee("1");
+            Equipment equipmenttest = new Equipment("481254");
+            if (tbxEmployeeID.Text != "" && tbxBarcode.Text != "") { 
+                Employee employee = new Employee(tbxEmployeeID.Text);
+                Equipment equipment = new Equipment(tbxBarcode.Text);
+                eManager.CheckInEquipment(employee, equipment);
+            }
         }
 
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
-
+            if (tbxEmployeeID.Text != "" && tbxBarcode.Text != "")
+            {
+                Employee employee = new Employee(tbxEmployeeID.Text);
+                Equipment equipment = new Equipment(tbxBarcode.Text);
+                eManager.CheckOutEquipment(employee, equipment);
+            }
         }
     }
 }
