@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.OleDb;
+using System.Data.Odbc;
 using System.Windows.Forms;
 
 namespace EquipmentCheckInApp
@@ -13,19 +13,19 @@ namespace EquipmentCheckInApp
         private string id, name, contactNumber, address, userName;
         private string[] skills;
 
-        static OleDbConnection con;
-        static OleDbCommand cmd;
-        static OleDbDataReader reader;
+        static OdbcConnection con;
+        static OdbcCommand cmd;
+        static OdbcDataReader reader;
 
         public Employee() { }
         public Employee(string employeeID)
         {
-            
 
-            con = new OleDbConnection();
-            con.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=EquipmentDatabase.accdb";
-            cmd = new OleDbCommand();
-            cmd.Connection = con;
+
+            string databasePath = AppDomain.CurrentDomain.BaseDirectory + "\\EquipmentDatabase.accdb";
+
+            con = new OdbcConnection("Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=" + databasePath + ";Uid=Admin;PWD=;");
+            cmd = con.CreateCommand();
             cmd.CommandText = "SELECT [First Name], [Last Name], [Phone Number], [Address], [Skills], [Username] FROM Employees WHERE [ID] = " + employeeID;
             con.Open();
             reader = cmd.ExecuteReader();
@@ -35,11 +35,9 @@ namespace EquipmentCheckInApp
                 id = employeeID;
                 name = reader[0] + " " + reader[1];
                 contactNumber = reader[2].ToString();
-                address = reader[4].ToString();
-                userName = reader[6].ToString();
-
-                string tempSkills = reader[5].ToString();
-                skills = tempSkills.Split(',');
+                address = reader[3].ToString();
+                skills = reader[4].ToString().Split(';');
+                userName = reader[5].ToString();
             }
             else
             {
