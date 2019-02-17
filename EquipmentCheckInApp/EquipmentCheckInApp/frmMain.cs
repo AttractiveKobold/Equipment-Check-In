@@ -11,21 +11,30 @@ using System.Data.OleDb;
 
 namespace EquipmentCheckInApp
 {
-    public partial class Form1 : Form
+    public partial class frmMain : Form
     {
         static OleDbConnection con;
         static OleDbCommand cmd;
         static OleDbDataReader reader;
 
-        public Form1()
+        
+
+        public frmMain()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void btnCheckIn_Click(object sender, EventArgs e)
         {
-       
+
         }
+
+        private void btnCheckOut_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
         private void getAllEquipment()
         {
