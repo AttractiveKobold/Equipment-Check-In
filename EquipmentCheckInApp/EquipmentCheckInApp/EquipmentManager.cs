@@ -14,18 +14,31 @@ namespace EquipmentCheckInApp
 
         static OdbcConnection con;
         static OdbcCommand cmd;
-        static OdbcDataReader reader;
 
-        public void CheckInEquipment(Employee employee, Equipment equipment)
+        public void CheckInEquipment(Equipment equipment)
         {
-           
+            if (equipment.getEmployeeID() == "")
+            {
+                MessageBox.Show("That Equipment is already checked in.");
+                return;
+            }
+
+            string databasePath = AppDomain.CurrentDomain.BaseDirectory + "\\EquipmentDatabase.accdb";
+            con = new OdbcConnection("Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=" + databasePath + ";Uid=Admin;PWD=;");
+            cmd = con.CreateCommand();
+            cmd.CommandText = "UPDATE Equipment SET Equipment.[Checked Out To] = NULL WHERE (((Equipment.ID)=" + equipment.getID() + "));";
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+            MessageBox.Show("Successful Check In");
         }
 
         public void CheckOutEquipment(Employee employee, Equipment equipment)
         {
             if (equipment.getEmployeeID() != "")
             {
-                MessageBox.Show("That Equipment is already checked out. Please Check it in before checking it out again");
+                MessageBox.Show("That equipment is already checked out. Please check it in before checking it out again");
                 return;
             }
 
@@ -53,6 +66,8 @@ namespace EquipmentCheckInApp
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
+
+            MessageBox.Show("Successful Check Out");
         }
     }
 }

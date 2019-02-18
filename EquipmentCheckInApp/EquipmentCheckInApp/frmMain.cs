@@ -26,10 +26,9 @@ namespace EquipmentCheckInApp
         private void btnCheckIn_Click(object sender, EventArgs e)
         {
             Equipment equipmenttest = new Equipment("481254");
-            if (tbxEmployeeID.Text != "" && tbxBarcode.Text != "") { 
-                Employee employee = new Employee(tbxEmployeeID.Text);
+            if (tbxBarcode.Text != "") { 
                 Equipment equipment = new Equipment(tbxBarcode.Text);
-                eManager.CheckInEquipment(employee, equipment);
+                eManager.CheckInEquipment(equipment);
             }
         }
 
