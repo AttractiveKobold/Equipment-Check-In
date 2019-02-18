@@ -30,7 +30,7 @@ namespace EquipmentCheckInApp
             con.Open();
             reader = cmd.ExecuteReader();
 
-            if (reader.Read())
+            if (reader.HasRows)
             {
                 id = employeeID;
                 name = reader[0] + " " + reader[1];

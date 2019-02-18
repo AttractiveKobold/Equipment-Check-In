@@ -41,5 +41,10 @@ namespace EquipmentCheckInApp
                 eManager.CheckOutEquipment(employee, equipment);
             }
         }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

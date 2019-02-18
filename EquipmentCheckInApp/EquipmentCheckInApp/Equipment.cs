@@ -28,7 +28,7 @@ namespace EquipmentCheckInApp
             con.Open();
             reader = cmd.ExecuteReader();
        
-            if (reader.Read())
+            if (reader.HasRows)
             {
                 this.id = id;
                 skills = reader[0].ToString().Split(';');
@@ -45,7 +45,7 @@ namespace EquipmentCheckInApp
             con.Open();
             reader = cmd.ExecuteReader();
 
-            if (reader.Read())
+            if (reader.HasRows)
             {
                 employeeID = reader[0].ToString();
             }

@@ -122,6 +122,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmMain";
             this.Text = "Equipment Manager";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
