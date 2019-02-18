@@ -36,7 +36,9 @@
             this.lblBarcode = new System.Windows.Forms.Label();
             this.tbxBarcode = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnViewReport = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -107,11 +109,22 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnViewReport);
             this.groupBox2.Location = new System.Drawing.Point(379, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(361, 167);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
+            // 
+            // btnViewReport
+            // 
+            this.btnViewReport.Location = new System.Drawing.Point(144, 70);
+            this.btnViewReport.Name = "btnViewReport";
+            this.btnViewReport.Size = new System.Drawing.Size(75, 23);
+            this.btnViewReport.TabIndex = 0;
+            this.btnViewReport.Text = "View Report";
+            this.btnViewReport.UseVisualStyleBackColor = true;
+            this.btnViewReport.Click += new System.EventHandler(this.btnViewReport_Click);
             // 
             // frmMain
             // 
@@ -125,6 +138,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -139,6 +153,7 @@
         private System.Windows.Forms.Button btnCheckIn;
         private System.Windows.Forms.Label lblEmployeeID;
         private System.Windows.Forms.TextBox tbxEmployeeID;
+        private System.Windows.Forms.Button btnViewReport;
     }
 }
 

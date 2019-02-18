@@ -46,5 +46,13 @@ namespace EquipmentCheckInApp
         {
             Application.Exit();
         }
+
+        private void btnViewReport_Click(object sender, EventArgs e)
+        {
+            frmReportView frmReportView = new frmReportView();
+            frmReportView.Owner = this;
+            frmReportView.Show();
+            this.Hide();
+        }
     }
 }
