@@ -37,6 +37,7 @@
             this.tbxBarcode = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnViewReport = new System.Windows.Forms.Button();
+            this.btnCreateReport = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -109,6 +110,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnCreateReport);
             this.groupBox2.Controls.Add(this.btnViewReport);
             this.groupBox2.Location = new System.Drawing.Point(379, 12);
             this.groupBox2.Name = "groupBox2";
@@ -118,13 +120,23 @@
             // 
             // btnViewReport
             // 
-            this.btnViewReport.Location = new System.Drawing.Point(144, 70);
+            this.btnViewReport.Location = new System.Drawing.Point(124, 70);
             this.btnViewReport.Name = "btnViewReport";
-            this.btnViewReport.Size = new System.Drawing.Size(75, 23);
+            this.btnViewReport.Size = new System.Drawing.Size(95, 23);
             this.btnViewReport.TabIndex = 0;
             this.btnViewReport.Text = "View Report";
             this.btnViewReport.UseVisualStyleBackColor = true;
             this.btnViewReport.Click += new System.EventHandler(this.btnViewReport_Click);
+            // 
+            // btnCreateReport
+            // 
+            this.btnCreateReport.Location = new System.Drawing.Point(124, 32);
+            this.btnCreateReport.Name = "btnCreateReport";
+            this.btnCreateReport.Size = new System.Drawing.Size(95, 23);
+            this.btnCreateReport.TabIndex = 1;
+            this.btnCreateReport.Text = "Create Report";
+            this.btnCreateReport.UseVisualStyleBackColor = true;
+            this.btnCreateReport.Click += new System.EventHandler(this.btnCreateReport_Click);
             // 
             // frmMain
             // 
@@ -154,6 +166,7 @@
         private System.Windows.Forms.Label lblEmployeeID;
         private System.Windows.Forms.TextBox tbxEmployeeID;
         private System.Windows.Forms.Button btnViewReport;
+        private System.Windows.Forms.Button btnCreateReport;
     }
 }
 

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TreeViewExtensions.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="Equipment.cs" />
     <Compile Include="EquipmentDatabaseDataSet.Designer.cs">
@@ -54,6 +55,12 @@
       <DependentUpon>EquipmentDatabaseDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="EquipmentManager.cs" />
+    <Compile Include="frmCreateReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCreateReport.Designer.cs">
+      <DependentUpon>frmCreateReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmReportView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +82,9 @@
     <Compile Include="Manager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCreateReport.resx">
+      <DependentUpon>frmCreateReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>

@@ -54,5 +54,13 @@ namespace EquipmentCheckInApp
             frmReportView.Show();
             this.Hide();
         }
+
+        private void btnCreateReport_Click(object sender, EventArgs e)
+        {
+            frmCreateReport frmCreateReport = new frmCreateReport();
+            frmCreateReport.Owner = this;
+            frmCreateReport.Show();
+            this.Hide();
+        }
     }
 }
