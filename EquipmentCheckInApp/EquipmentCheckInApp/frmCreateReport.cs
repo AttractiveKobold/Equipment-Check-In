@@ -45,6 +45,8 @@ namespace EquipmentCheckInApp
 
         private void CheckBoxIsChecked(object sender, TreeViewEventArgs e)
         {
+            if (e.Node.Level == 0) return;
+
             string fullSelectionText = e.Node.Parent.Text + ".[" + e.Node.Text + "]";
 
             if (e.Node.Checked == true)
