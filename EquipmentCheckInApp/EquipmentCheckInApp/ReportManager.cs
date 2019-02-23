@@ -18,13 +18,16 @@ namespace EquipmentCheckInApp
 
             using (StreamReader sr = new StreamReader("Reports.txt"))
             {
-                string text = sr.ReadLine();
+                if (sr.Peek() != -1)
+                { 
+                    string text = sr.ReadLine();
 
-                string[] reportArray = text.Split('$');
+                    string[] reportArray = text.Split('$');
 
-                for (int i = 1; i < reportArray.Length; i += 2)
-                {
-                    reports.Add(reportArray[i], reportArray[i + 1]);
+                    for (int i = 1; i < reportArray.Length; i += 2)
+                    {
+                        reports.Add(reportArray[i], reportArray[i + 1]);
+                    }
                 }
             }
 

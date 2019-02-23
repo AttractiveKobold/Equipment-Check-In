@@ -47,14 +47,14 @@ namespace EquipmentCheckInApp
                     {
                         //TODO: make a manager version of the main form and replace the code below to open that form instead of the general main form
                         con.Close();
-                        frmMain frmMain = new frmMain();
+                        frmMain frmMain = new frmMain(true);
                         frmMain.Show();
                         this.Hide();
                     }
                     else
                     {
                         con.Close();
-                        frmMain frmMain = new frmMain();
+                        frmMain frmMain = new frmMain(false);
                         frmMain.Show();
                         this.Hide();
                     }

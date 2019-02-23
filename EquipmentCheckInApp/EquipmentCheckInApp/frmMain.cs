@@ -16,10 +16,13 @@ namespace EquipmentCheckInApp
 
         private EquipmentManager eManager;
 
-        public frmMain()
+        public frmMain(bool manager)
         {
             InitializeComponent();
             eManager = new EquipmentManager();
+
+            if (!manager)
+                btnCreateReport.Enabled = false;
         }
 
 
@@ -67,6 +70,11 @@ namespace EquipmentCheckInApp
             frmCreateReport.Owner = this;
             frmCreateReport.Show();
             this.Hide();
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
