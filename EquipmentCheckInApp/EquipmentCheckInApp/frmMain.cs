@@ -25,21 +25,27 @@ namespace EquipmentCheckInApp
 
         private void btnCheckIn_Click(object sender, EventArgs e)
         {
-            Equipment equipmenttest = new Equipment("481254");
-            if (tbxBarcode.Text != "") { 
-                Equipment equipment = new Equipment(tbxBarcode.Text);
-                eManager.CheckInEquipment(equipment);
+            if (string.IsNullOrWhiteSpace(tbxBarcode.Text))
+            {
+                MessageBox.Show("Barcode cannot be blank");
+                return;
             }
+
+            Equipment equipmenttest = new Equipment("481254");
+            Equipment equipment = new Equipment(tbxBarcode.Text);
+            eManager.CheckInEquipment(equipment);
         }
 
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
-            if (tbxEmployeeID.Text != "" && tbxBarcode.Text != "")
+            if (string.IsNullOrWhiteSpace(tbxEmployeeID.Text) || string.IsNullOrWhiteSpace(tbxBarcode.Text))
             {
-                Employee employee = new Employee(tbxEmployeeID.Text);
-                Equipment equipment = new Equipment(tbxBarcode.Text);
-                eManager.CheckOutEquipment(employee, equipment);
+                MessageBox.Show("Barcode and employee ID cannot be blank");
+                return;
             }
+            Employee employee = new Employee(tbxEmployeeID.Text);
+            Equipment equipment = new Equipment(tbxBarcode.Text);
+            eManager.CheckOutEquipment(employee, equipment);
         }
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -49,9 +55,9 @@ namespace EquipmentCheckInApp
 
         private void btnViewReport_Click(object sender, EventArgs e)
         {
-            frmReportView frmReportView = new frmReportView();
-            frmReportView.Owner = this;
-            frmReportView.Show();
+            frmReportSelect frmReportSelect = new frmReportSelect();
+            frmReportSelect.Owner = this;
+            frmReportSelect.Show();
             this.Hide();
         }
 

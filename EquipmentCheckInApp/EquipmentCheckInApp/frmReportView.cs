@@ -16,10 +16,13 @@ namespace EquipmentCheckInApp
         static OdbcConnection con;
         static OdbcCommand cmd;
         static OdbcDataReader reader;
+        string queryString;
 
-        public frmReportView()
+        public frmReportView(string queryString)
         {
             InitializeComponent();
+
+            this.queryString = queryString;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -39,19 +42,28 @@ namespace EquipmentCheckInApp
 
             con = new OdbcConnection("Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=" + databasePath + ";Uid=Admin;PWD=;");
             cmd = con.CreateCommand();
-            cmd.CommandText = "SELECT * FROM Employees";
+            cmd.CommandText = queryString;
             con.Open();
             reader = cmd.ExecuteReader();
 
-            if (reader.HasRows)
+            if (reader.Read())
             {
-                reader.Read();
+                for (int i = 0; i < reader.FieldCount; i++)
+                {
+                    dgvData.Columns.Add(reader.GetName(i), reader.GetName(i));
+                }
 
-                //WRITE YOUR CODE HERE
+                do 
+                {
+                    object[] rowData = new object[reader.FieldCount];
+                    reader.GetValues(rowData);
+                    dgvData.Rows.Add(rowData);
+                } while((reader.Read()));
+
             }
             else
             {
-                MessageBox.Show("Nope");
+                MessageBox.Show("There was no data to retireve");
             }
 
             con.Close();

@@ -36,6 +36,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnApply = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnView = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbxReportName = new System.Windows.Forms.TextBox();
+            this.btnViewReport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.equipmentDataset)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +64,6 @@
             this.tvData.Name = "tvData";
             this.tvData.Size = new System.Drawing.Size(263, 226);
             this.tvData.TabIndex = 3;
-            this.tvData.DrawNode += new System.Windows.Forms.DrawTreeNodeEventHandler(this.tvData_DrawNode);
             // 
             // tbxValue
             // 
@@ -105,11 +109,62 @@
             this.btnApply.UseVisualStyleBackColor = true;
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(350, 386);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 9;
+            this.btnSave.Text = "Save Report";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnView
+            // 
+            this.btnView.Location = new System.Drawing.Point(350, 415);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(75, 23);
+            this.btnView.TabIndex = 10;
+            this.btnView.Text = "View Report";
+            this.btnView.UseVisualStyleBackColor = true;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(214, 347);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Report Name";
+            // 
+            // tbxReportName
+            // 
+            this.tbxReportName.Location = new System.Drawing.Point(290, 344);
+            this.tbxReportName.Name = "tbxReportName";
+            this.tbxReportName.Size = new System.Drawing.Size(197, 20);
+            this.tbxReportName.TabIndex = 12;
+            // 
+            // btnViewReport
+            // 
+            this.btnViewReport.Location = new System.Drawing.Point(693, 415);
+            this.btnViewReport.Name = "btnViewReport";
+            this.btnViewReport.Size = new System.Drawing.Size(95, 23);
+            this.btnViewReport.TabIndex = 13;
+            this.btnViewReport.Text = "View Report";
+            this.btnViewReport.UseVisualStyleBackColor = true;
+            this.btnViewReport.Click += new System.EventHandler(this.btnViewReport_Click);
+            // 
             // frmCreateReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnViewReport);
+            this.Controls.Add(this.tbxReportName);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btnView);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnApply);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -118,7 +173,8 @@
             this.Controls.Add(this.tvData);
             this.Controls.Add(this.cbSelectedColumns);
             this.Name = "frmCreateReport";
-            this.Text = "frmCreateReport";
+            this.Text = "Report Creation";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCreateReport_FormClosing);
             this.Load += new System.EventHandler(this.frmCreateReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.equipmentDataset)).EndInit();
             this.ResumeLayout(false);
@@ -136,5 +192,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnApply;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnView;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox tbxReportName;
+        private System.Windows.Forms.Button btnViewReport;
     }
 }

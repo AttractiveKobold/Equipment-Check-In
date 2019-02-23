@@ -36,8 +36,8 @@
             this.lblBarcode = new System.Windows.Forms.Label();
             this.tbxBarcode = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnViewReport = new System.Windows.Forms.Button();
             this.btnCreateReport = new System.Windows.Forms.Button();
+            this.btnViewReport = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -118,16 +118,6 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
-            // btnViewReport
-            // 
-            this.btnViewReport.Location = new System.Drawing.Point(124, 70);
-            this.btnViewReport.Name = "btnViewReport";
-            this.btnViewReport.Size = new System.Drawing.Size(95, 23);
-            this.btnViewReport.TabIndex = 0;
-            this.btnViewReport.Text = "View Report";
-            this.btnViewReport.UseVisualStyleBackColor = true;
-            this.btnViewReport.Click += new System.EventHandler(this.btnViewReport_Click);
-            // 
             // btnCreateReport
             // 
             this.btnCreateReport.Location = new System.Drawing.Point(124, 32);
@@ -137,6 +127,16 @@
             this.btnCreateReport.Text = "Create Report";
             this.btnCreateReport.UseVisualStyleBackColor = true;
             this.btnCreateReport.Click += new System.EventHandler(this.btnCreateReport_Click);
+            // 
+            // btnViewReport
+            // 
+            this.btnViewReport.Location = new System.Drawing.Point(124, 107);
+            this.btnViewReport.Name = "btnViewReport";
+            this.btnViewReport.Size = new System.Drawing.Size(95, 23);
+            this.btnViewReport.TabIndex = 0;
+            this.btnViewReport.Text = "View Report";
+            this.btnViewReport.UseVisualStyleBackColor = true;
+            this.btnViewReport.Click += new System.EventHandler(this.btnViewReport_Click);
             // 
             // frmMain
             // 
