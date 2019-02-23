@@ -16,7 +16,7 @@ namespace EquipmentCheckInApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmCreateReport());
+            Application.Run(new frmLogin());
         }
     }
 }
